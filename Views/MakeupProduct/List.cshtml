@@ -1,0 +1,35 @@
+﻿@model List<PassionProject.Models.MakeupProduct>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Makeupproducts</h2>
+<div class="navbar">
+    <a class="navlink" href="/MakeupProduct/New">Add New</a>
+</div>
+<div class="tilecontainer">
+    @{
+        foreach (var MakeupProduct in Model)
+        {
+            <div class="listitem">
+                <div class="itemimage">
+                    @{
+                        if (MakeupProduct.HasPic == 1)
+                        {
+                            <img src="../../Content/MakeupProduct/@(MakeupProduct.MakeupProductID).@(MakeupProduct.PicExtension)" alt="Image of @MakeupProduct.MakeupProductName" />
+                        }
+                    }
+                </div>
+                <div class="itemdetails">
+                    <div class="listcat"><a href="/MakeupProduct/Show/@MakeupProduct.MakeupProductID">@MakeupProduct.MakeupProductName</a></div>
+                    <div class="listcat">Brand : <span>@MakeupProduct.Brand.Name</span></div>
+                    <div class="listcat">Price : <span>@(MakeupProduct.Price)$</span></div>
+                    <span class="cta"><a href="/MakeupProduct/Update/@MakeupProduct.MakeupProductID">Update</a></span>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        }
+    }
+    <div style="clear:both;"></div>
+</div>

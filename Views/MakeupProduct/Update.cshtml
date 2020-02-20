@@ -1,0 +1,40 @@
+﻿@model PassionProject.Models.ViewModels.UpdateMakeupProduct
+
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+<div class="navbar">
+    <a href="/MakeupProduct/List">Back to List</a>
+</div>
+<!-- Do not forget enctype="multiplart/form-data" if you want to do file upload! -->
+<form action="/MakeupProduct/Update/@Model.MakeupProduct.MakeupProductID" method="POST" enctype="multipart/form-data">
+    <div class="inpfield"><span>Image: </span><input type="file" name="MakeupProductPic" id="MakeupProductPic" /></div>
+    <div class="inpfield"><span>MakeupProduct Name: </span><input type="text" value="@Model.MakeupProduct.MakeupProductName" id="MakeupProductName" name="MakeupProductName" /> </div>
+    <div class="inpfield"><span>MakeupProduct Price($): </span><input type="text" value="@Model.MakeupProduct.Price" id="MakeupProductPrice" name="MakeupProductPrice" /> </div>
+    <div class="inpfield"><span>MakeupProduct Productiondate: </span><input type="text" value="@Model.MakeupProduct.ProductionDate" id="MakeupProductProductionDate" name="MakeupProductProductionDate" /></div>
+    <div class="inpfield"><span>MakeupProduct Expirydate: </span><input type="text" value="@Model.MakeupProduct.ExpiryDate" id="MakeupProductExpiryDate" name="MakeupProductExpiryDate" /></div>
+    <div class="inpfield">
+        <span>MakeupProduct Brand: </span>
+        <select id="MakeupProductBrandID" name="BrandID">
+            @foreach (var brand in Model.Brand)
+            {
+                var selected = "";
+                if (Model.MakeupProduct.BrandID == brand.BrandID)
+                {
+                    selected = "selected";
+                }
+                <option value="@brand.BrandID" @selected>@brand.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="inpfield">
+        <span>MakeupProduct Notes</span>
+        <textarea id="MakeupProductNotes" name="MakeupProductNotes">@Model.MakeupProduct.Notes</textarea>
+    </div>
+    <div class="inpfield"><input type="submit" value="update MakeupProduct" /></div>
+
+</form>

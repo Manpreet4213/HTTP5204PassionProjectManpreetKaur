@@ -1,0 +1,20 @@
+﻿@model List<PassionProject.Models.Store>
+
+
+@{
+    ViewBag.Title = "List";
+}
+<h2>List of Stores</h2>
+<div class="navbar">
+    <a class="navlink" href="/Store/New">Add New</a>
+</div>
+<div class="tilecontainer">
+    @foreach (var store in @Model)
+    {
+        <div class="listitem">
+            <div><a href="/Store/Show/@store.StoreID">@store.StoreName</a></div>
+            <div>Address: @store.StoreAddress</div>
+            <div>Owner: @store.StoreOwner</div>
+        </div>
+    }
+</div>

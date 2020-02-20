@@ -1,0 +1,44 @@
+﻿@model PassionProject.Models.ViewModels.ShowMakeupProduct
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Show MakeupProduct</h2>
+<div class="navbar">
+    <a class="navlink" href="/MakeupProduct/List">Back to List</a>
+    <a class="navlink" href="/MakeupProduct/Update/@Model.makeupProduct.MakeupProductID">Update</a>
+    <a class="navlink" href="/MakeupProduct/DeleteConfirm/@Model.makeupProduct.MakeupProductID">Delete</a>
+</div>
+<div>
+
+    <div class="col2">
+        
+            <div>Name : @Model.makeupProduct.MakeupProductName</div>
+            <div>Price : @(Model.makeupProduct.Price)$</div>
+            <div>Brand : @Model.makeupProduct.Brand.Name</div>
+            <div>
+                Notes :
+                <div class="notepad">
+                    @Model.makeupProduct.Notes
+                </div>
+            </div>
+
+    </div>
+    <div class="col2last">
+        <div class="sectionheader">Stores:</div>
+        @{
+
+            foreach (var store in @Model.stores)
+            {
+                <div class="lineitem">
+                    <a href="/Store/Show/@store.StoreID">@store.StoreName</a>
+                </div>
+            }
+
+
+        }
+        
+    </div>
+    <div style="clear:both;"></div>
+</div>

@@ -1,0 +1,23 @@
+﻿@model List<PassionProject.Models.Brand>
+
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+<div class="navbar">
+    <a href="/Brand/Add">Add New</a>
+</div>
+<div class="tilecontainer">
+    @{
+        foreach (var brand in @Model)
+        {
+
+            <div class="listitem">
+                <a href="/Brand/Show/@brand.BrandID">@brand.Name</a>
+                <a class="cta" href="/Brand/Update/@brand.BrandID">Update</a>
+            </div>
+        }
+    }
+</div>

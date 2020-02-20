@@ -1,0 +1,38 @@
+﻿@model  List<PassionProject.Models.Brand>
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add a New MakeupProduct</h2>
+<div class="navbar">
+    <a class="navlink" href="/MakeupProduct/List">Back to List</a>
+</div>
+<form method="POST" action="/MakeupProduct/Add">
+    <!-- TODO: format this nicely -->
+    <div class="inpfield"><span>Name:</span><input id="MakeupProductName" type="text" name="MakeupProductName" /></div>
+    <div class="inpfield">
+        <span>Brand:</span>
+        <select id="BrandID" type="text" name="BrandID">
+            @{
+                //using rendering loop to provide a list of the brands to user
+                //for the addition of a makeupproducts to the system.
+                foreach (var brand in Model)
+                {
+                    <option value="@brand.BrandID">@brand.Name</option>
+
+                }
+            }
+        </select>
+    </div>
+    <div class="inpfield"><span>Price (c):</span><input id="MakeupProductPrice" type="text" name="MakeupProductPrice" /></div>
+    <div class="inpfield"><span>Productiondate:</span><input id="ProductionDate" type="text" name="ProductionDate" /></div>
+    <div class="inpfield"><span>Expirydate:</span><input id="ExpiryDate" type="text" name="ExpiryDate" /></div>
+    <div class="inpfield">
+        Notes:
+        <textarea id="MakeupProductNotes" name="MakeupProductNotes">
+        </textarea>
+    </div>
+    <div class="inpfield">
+        <input type="submit" value="Add MakeupProduct">
+    </div>
+</form>

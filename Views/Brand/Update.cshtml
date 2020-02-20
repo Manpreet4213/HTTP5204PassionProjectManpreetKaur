@@ -1,0 +1,12 @@
+﻿@model PassionProject.Models.Brand
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update @Model.Name</h2>
+<a href="/Brand/List">Back to List</a>
+
+<form method="post" action="/Brand/Update/@Model.BrandID">
+    <input type="text" id="BrandName" name="BrandName" value="@Model.Name" />
+    <input type="submit" value="update brand" />
+</form>

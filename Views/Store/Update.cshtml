@@ -1,0 +1,26 @@
+﻿@model PassionProject.Models.Store
+
+
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New Store</h2>
+
+<div class="navbar">
+    <a class="navlink" href="/Store/List">Back to List</a>
+</div>
+<div>
+    <div class="col2">
+        <form method="post" action="/Store/Update/@Model.StoreID">
+            <div class="inpfield"><span>Store Name:</span><input type="text" name="StoreName" id="StoreName" value="@Model.StoreName" /></div>
+            
+            <div class="inpfield"><span>Store Address:</span><input type="text" name="StoreAddress" id="StoreAddress" value="@Model.StoreAddress" /></div>
+            <div class="inpfield"><span>Owner:</span><input type="text" name="StoreOwner" id="StoreOwner" value="@Model.StoreOwner" /></div>
+            
+            <input type="submit" value="Update Store" />
+        </form>
+    </div>
+    <div class="col2last"></div>
+    <div style="clear:both;"></div>
+</div>

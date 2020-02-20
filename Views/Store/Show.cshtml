@@ -1,0 +1,58 @@
+﻿@model PassionProject.Models.ViewModels.ShowStore
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>@Model.store.StoreName</h2>
+
+<div class="navbar">
+    <a class="navlink" href="/Store/List">Back to List</a>
+    <a class="navlink" href="/Store/Update/@Model.store.StoreID">Update</a>
+    <a class="navlink" href="/Store/DeleteConfirm/@Model.store.StoreID">Delete</a>
+</div>
+<div>
+    <div class="col2">
+        <div><span>Store Name:</span> @Model.store.StoreName</div>
+        
+        <div><span>Address:</span> @Model.store.StoreAddress</div>
+        <div><span>Owner:</span>@Model.store.StoreOwner</div>
+        
+        
+    </div>
+    <div class="col2last">
+        <div class="sectionheader">MakeupProducts Available:</div>
+        @{
+
+            foreach (var makeupproduct in @Model.all_makeupProducts)
+            {
+                <div class="lineitem">
+                    <a href="/MakeupProduct/Show/@makeupproduct.MakeupProductID">@makeupproduct.MakeupProductName</a>
+                    @{
+                        //passing a link both for the makeupproductid and the storeid
+                    }
+                    <a href="/Store/DetachMakeupProduct/@Model.store.StoreID?MakeupProductID=@makeupproduct.MakeupProductID">
+                        Remove MakeupProduct
+                    </a>
+                </div>
+            }
+
+        }
+        <form method="post" action="/Store/AttachMakeupProduct/@Model.store.StoreID">
+            <select name="MakeupProductID" id="MakeupProductID">
+                @{
+                    //add another makeupproduct to a store's record
+
+                    foreach (var makeupproduct in Model.all_makeupProducts)
+                    {
+                        <option value="@makeupproduct.MakeupProductID">
+                            @makeupproduct.MakeupProductName (@makeupproduct.Brand.Name)
+                        </option>
+                    }
+                }
+            </select>
+            <input type="submit" value="Add MakeupProduct" />
+        </form>
+
+    </div>
+    <div style="clear:both;"></div>
+</div>

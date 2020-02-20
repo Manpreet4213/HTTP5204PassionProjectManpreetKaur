@@ -1,0 +1,137 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+/* styling for the passion project. I have taken this css from Christine Bittle's passion project assignment.*/
+.listitem {
+    background: #f3f3f3;
+    padding: 10px;
+    position: relative;
+    width: 30%;
+    margin-right: 5%;
+    float: left;
+    margin-bottom: 30px;
+}
+
+    .listitem:nth-child(3n) {
+        margin-right: 0;
+    }
+
+    .listitem .cta {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+.tilecontainer {
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+.navlink {
+    margin-right: 30px;
+}
+
+.notepad {
+    background: #dffe4d;
+    padding: 15px;
+    max-width: 500px;
+    margin-top: 15px;
+}
+
+.inpfield {
+    max-width: 500px;
+    display: block;
+    padding: 10px 0;
+}
+
+    .inpfield input[type="text"], .inpfield select, .inpfield textarea {
+        float: right;
+        width: 350px;
+        box-sizing: border-box;
+    }
+
+.itemdetails {
+    width: 70%;
+    float: left;
+}
+
+.itemimage {
+    width: 25%;
+    float: left;
+    margin-right: 5%;
+}
+
+    .itemimage img {
+        width: 100%;
+    }
+
+.inpfield textarea, .inpfield input[type="text"] {
+    padding: 2px 2px 2px 5px;
+}
+
+.inpfield input[type="submit"] {
+    margin-top: 40px;
+}
+
+.inpfield::after {
+    clear: both;
+}
+
+.col2, .col2last {
+    float: left;
+    margin-right: 2%;
+    width: 49%;
+}
+
+.col2last {
+    margin-right: 0;
+}
+
+.sectionheader {
+    background: #f3f3f3;
+    padding: 10px 8px;
+    margin-bottom: 20px;
+}
+
+.lineitem {
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+#profilecontainer {
+    max-width: 200px;
+    margin-bottom: 30px;
+}
+
+    #profilecontainer img {
+        width: 100%;
+    }
+
+@media screen and (max-width:990px) {
+    .listitem {
+        margin-bottom: 20px;
+        float: none;
+        width: 100%;
+    }
+}

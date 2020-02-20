@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New Store</h2>
+
+<div class="navbar">
+    <a class="navlink" href="/Store/List">Back to List</a>
+</div>
+<div>
+    <div class="col2">
+        <form method="post" action="/Store/Add">
+            <div class="inpfield"><span>Name:</span><input type="text" name="Name" id="Name" /></div>
+            
+            <div class="inpfield"><span>Address:</span><input type="text" name="Address" id="Address" /></div>
+            <div class="inpfield"><span>Owner:</span><input type="text" name="Owner" id="Owner" /></div>
+            
+            <input type="submit" value="Add Store" />
+        </form>
+    </div>
+    <div class="col2last"></div>
+    <div style="clear:both;"></div>
+</div>
