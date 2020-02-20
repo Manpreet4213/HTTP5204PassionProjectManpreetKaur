@@ -211,5 +211,11 @@ namespace PassionProject.Controllers
 
         //Debug.WriteLine("I Want to delete a makeupproduct with id " + id") ;
 
+
+        //I tried a lot to complete image part.But, due to that access denied problem
+        //and the shortage of time i was not able to figure out that.
+        //Also, the side panel part of the makeupproduct show page is also not working properly.
+        //I checked the query again and again.
+
     }
 }

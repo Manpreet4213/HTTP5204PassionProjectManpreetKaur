@@ -13,16 +13,24 @@
 <div>
 
     <div class="col2">
-        
-            <div>Name : @Model.makeupProduct.MakeupProductName</div>
-            <div>Price : @(Model.makeupProduct.Price)$</div>
-            <div>Brand : @Model.makeupProduct.Brand.Name</div>
-            <div>
-                Notes :
-                <div class="notepad">
-                    @Model.makeupProduct.Notes
-                </div>
+        <div id="profilecontainer">
+            @{
+                if (Model.makeupProduct.HasPic == 1)
+                {
+                    <img src="../../Content/Pets/@(Model.makeupProduct.MakeupProductID).@(Model.makeupProduct.PicExtension)" alt="Image of @Model.makeupProduct.MakeupProductName" />
+                }
+            }
+        </div>
+
+        <div>Name : @Model.makeupProduct.MakeupProductName</div>
+        <div>Price : @(Model.makeupProduct.Price)$</div>
+        <div>Brand : @Model.makeupProduct.Brand.Name</div>
+        <div>
+            Notes :
+            <div class="notepad">
+                @Model.makeupProduct.Notes
             </div>
+        </div>
 
     </div>
     <div class="col2last">
