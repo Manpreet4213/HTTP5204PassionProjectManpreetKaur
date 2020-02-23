@@ -5,13 +5,13 @@
     ViewBag.Title = "List";
 }
 <h2>List of Stores</h2>
-<div class="navbar">
+<div class="option">
     <a class="navlink" href="/Store/New">Add New</a>
 </div>
-<div class="tilecontainer">
+<div class="listcontainer">
     @foreach (var store in @Model)
     {
-        <div class="listitem">
+        <div class="item">
             <div><a href="/Store/Show/@store.StoreID">@store.StoreName</a></div>
             <div>Address: @store.StoreAddress</div>
             <div>Owner: @store.StoreOwner</div>

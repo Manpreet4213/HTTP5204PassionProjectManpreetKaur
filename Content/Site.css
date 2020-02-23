@@ -23,11 +23,12 @@ textarea {
     max-width: 280px;
 }
 /* styling for the passion project. I have taken this css from Christine Bittle's passion project assignment.*/
-.listitem {
-    background: #f3f3f3;
+.item {
+    background: #ffd800;
     padding: 10px;
     position: relative;
     width: 30%;
+    display:block;
     margin-right: 5%;
     float: left;
     margin-bottom: 30px;
@@ -43,9 +44,9 @@ textarea {
         right: 10px;
     }
 
-.tilecontainer {
+.listcontainer {
     overflow: hidden;
-    padding-top: 20px;
+    padding-top: 20px; 
 }
 
 .navlink {
@@ -59,10 +60,10 @@ textarea {
     margin-top: 15px;
 }
 
-.inpfield {
-    max-width: 500px;
+.input {
+    max-width: 600px;
     display: block;
-    padding: 10px 0;
+    padding: 8px 0;
 }
 
     .inpfield input[type="text"], .inpfield select, .inpfield textarea {

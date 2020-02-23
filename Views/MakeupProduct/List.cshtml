@@ -5,14 +5,14 @@
 }
 
 <h2>List of Makeupproducts</h2>
-<div class="navbar">
+<div class="option">
     <a class="navlink" href="/MakeupProduct/New">Add New</a>
 </div>
-<div class="tilecontainer">
+<div class="listcontainer">
     @{
         foreach (var MakeupProduct in Model)
         {
-            <div class="listitem">
+            <div class="item">
                 <div class="itemimage">
                     @{
                         if (MakeupProduct.HasPic == 1)

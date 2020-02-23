@@ -6,15 +6,15 @@
 }
 
 <h2>List</h2>
-<div class="navbar">
+<div class="option">
     <a href="/Brand/Add">Add New</a>
 </div>
-<div class="tilecontainer">
+<div class="listcontainer">
     @{
         foreach (var brand in @Model)
         {
 
-            <div class="listitem">
+            <div class="item">
                 <a href="/Brand/Show/@brand.BrandID">@brand.Name</a>
                 <a class="cta" href="/Brand/Update/@brand.BrandID">Update</a>
             </div>
