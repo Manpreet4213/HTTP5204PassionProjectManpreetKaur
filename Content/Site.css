@@ -95,6 +95,7 @@ textarea {
 
 .inpfield textarea, .inpfield input[type="text"] {
     padding: 2px 2px 2px 5px;
+    background: #e5ecf4;
 }
 
 .inpfield input[type="submit"] {

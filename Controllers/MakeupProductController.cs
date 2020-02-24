@@ -124,7 +124,7 @@ namespace PassionProject.Controllers
             //assume there is no picture
 
             int haspic = 0;
-            string petpicextension = "";
+            string makeupProductPicextension = "";
             //check to get some more information.
             if (MakeupProductPic != null)
             {
@@ -151,7 +151,7 @@ namespace PassionProject.Controllers
                             MakeupProductPic.SaveAs(path);
                             //if these are all successful then we can set these fields
                             haspic = 1;
-                            petpicextension = extension;
+                            makeupProductPicextension = extension;
 
                         }
                         //if not sucessful then use following the catch method to show the error.
@@ -169,7 +169,7 @@ namespace PassionProject.Controllers
 
             //Debug.WriteLine("I am trying to edit a makeupproduct's name to "+MakeupProductName+" and change the Notes to "+MakeupProductNotes);
             //query to update the makeupProduct
-            string query = "update makeupproducts set MakeupProductName=@MakeupProductName, BrandID=@BrandID, ProductionDate=@MakeupProductProductionDate, ExpiryDate=@MakeupProductExpiryDate, Price=@MakeupProductPrice, Notes=@MakeupProductNotes, HasPic=@haspic, PicExtension=@petpicextension where MakeupProductID=@id";
+            string query = "update makeupproducts set MakeupProductName=@MakeupProductName, BrandID=@BrandID, ProductionDate=@MakeupProductProductionDate, ExpiryDate=@MakeupProductExpiryDate, Price=@MakeupProductPrice, Notes=@MakeupProductNotes, HasPic=@haspic, PicExtension=@makeupProductPicextension where MakeupProductID=@id";
             SqlParameter[] sqlparams = new SqlParameter[9];
             //0 to 8 pieces of the information.
             sqlparams[0] = new SqlParameter("@MakeupProductName", MakeupProductName);
@@ -180,7 +180,7 @@ namespace PassionProject.Controllers
             sqlparams[5] = new SqlParameter("@MakeupProductNotes",MakeupProductNotes);
             sqlparams[6] = new SqlParameter("@id", id);
             sqlparams[7] = new SqlParameter("@HasPic", haspic);
-            sqlparams[8] = new SqlParameter("@petpicextension", petpicextension);
+            sqlparams[8] = new SqlParameter("@makeupProductPicextension", makeupProductPicextension);
             
             db.Database.ExecuteSqlCommand(query, sqlparams);
 
