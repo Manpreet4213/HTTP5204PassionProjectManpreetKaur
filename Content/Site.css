@@ -8,6 +8,7 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
 footer {
     margin-top: 50px;
     background: #e5ecf4;
@@ -98,6 +99,7 @@ textarea {
 
 .inpfield input[type="submit"] {
     margin-top: 40px;
+    background: #ffd800;
 }
 
 .inpfield::after {
